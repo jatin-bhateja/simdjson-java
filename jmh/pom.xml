@@ -44,21 +44,25 @@ THE POSSIBILITY OF SUCH DAMAGE.
        This is the demo/sample template build script for building Java benchmarks with JMH.
        Edit as needed.
     -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-<!--
-    jmhImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.2'
-    jmhImplementation group: 'com.alibaba.fastjson2', name: 'fastjson2', version: '2.0.56'
-    jmhImplementation group: 'com.github.plokhotnyuk.jsoniter-scala', name: 'jsoniter-scala-core_2.13', version: jsoniterScalaVersion
-    jmhImplementation group: 'com.google.guava', name: 'guava', version: '33.4.0-jre'
-    compileOnly group: 'com.github.plokhotnyuk.jsoniter-scala', name: 'jsoniter-scala-macros_2.13', version: jsoniterScalaVersion
+        <!--
+            JMH version to use with this project.
+          -->
+        <jmh.version>1.37</jmh.version>
 
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.27.3'
-    testImplementation group: 'org.apache.commons', name: 'commons-text', version: '1.13.0'
-    testImplementation group: 'org.junit-pioneer', name: 'junit-pioneer', version: '2.3.0'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitVersion
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: junitVersion
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitVersion
-!-->
+        <!--
+            Java source/target to use for compilation.
+          -->
+        <javac.target>24</javac.target>
+
+        <!--
+            Name of the benchmark Uber-JAR to generate.
+          -->
+        <uberjar.name>benchmarks</uberjar.name>
+        <system.path>/mnt/c/GitHub/simdjson-java</system.path>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -102,28 +106,9 @@ THE POSSIBILITY OF SUCH DAMAGE.
            <artifactId>json</artifactId>
            <version>1.0</version>
            <scope>system</scope>
-           <systemPath>/mnt/c/GitHub/simdjson-java/build/libs/simdjson-java-0.3.1-SNAPSHOT.jar</systemPath>
-    </dependency>
+           <systemPath>${system.path}/build/libs/simdjson-java-0.3.1-SNAPSHOT.jar</systemPath>
+        </dependency>
     </dependencies>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!--
-            JMH version to use with this project.
-          -->
-        <jmh.version>1.37</jmh.version>
-
-        <!--
-            Java source/target to use for compilation.
-          -->
-        <javac.target>24</javac.target>
-
-        <!--
-            Name of the benchmark Uber-JAR to generate.
-          -->
-        <uberjar.name>benchmarks</uberjar.name>
-    </properties>
 
     <build>
         <plugins>
