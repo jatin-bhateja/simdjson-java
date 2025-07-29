@@ -128,7 +128,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
                     <archive>
                        <manifest>
                           <addClasspath>true</addClasspath>
-                          <classpathPrefix>/mnt/c/GitHub/simdjson-java/build/classes/java/main/org/simdjson</classpathPrefix>
+			  <classpathPrefix>${system.path}/build/classes/java/main/org/simdjson</classpathPrefix>
                        </manifest>
                     </archive>
                 </configuration>
