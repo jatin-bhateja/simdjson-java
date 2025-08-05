@@ -106,7 +106,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
            <artifactId>json</artifactId>
            <version>1.0</version>
            <scope>system</scope>
-           <systemPath>${system.path}/build/libs/simdjson-java-0.3.1-SNAPSHOT.jar</systemPath>
+           <systemPath>${system.path}/build/libs/simdjson-java-0.3.1-jdk_24_changes-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 
